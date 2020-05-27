@@ -3,7 +3,7 @@ This will download Lab 6 locally, allowing you to work on your scripts and uploa
 
 1. Clone your lab repository into your ~/ops435/lab6 directory using SSH:
 ```bash
-git clone git@github.com:ops435/lab6-yourgithubusername.git ~/ops435/lab6/
+git clone git@github.com:ops435/lab-6-yourgithubusername.git ~/ops435/lab6/
 ```
 2. Copy your backed-up work into your new GitHub-linked directory:
 ```bash
@@ -17,9 +17,9 @@ cd ~/ops435/lab6/
 pwd #confirm that you are in the right directory
 python3 ./CheckLab6.py -f -v
 ```
-2. Paste the checking script output into *laboutput.txt*:
+2. Redirect the checking script output into *laboutput.txt*:
 ```bash
-vi ~/ops435/lab6/laboutput.txt
+python3 ./CheckLab6.py -v &> ~/ops435/lab6/laboutput.txt
 ```
 
 3. Commit and push (upload) your lab work:
