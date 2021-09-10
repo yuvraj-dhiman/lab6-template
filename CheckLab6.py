@@ -199,7 +199,7 @@ class lab6a(unittest.TestCase):
             student.addGrade('uli101', 4.0)
             student.addGrade('ipc144', 0.0)
             student.addGrade('ops535', 4.0)
-            student.addGrade('ops435', 0.0)
+            student.addGrade('ops445', 0.0)
             string1 = set(student.displayCourses())
         except:
             self.fail(error_fail)
@@ -233,13 +233,13 @@ def CheckForUpdates():
         lab_name = 'CheckLab6.py'
         lab_num = 'lab6'
         print('Checking for updates...')
-        if ChecksumLatest(url='https://ict.senecacollege.ca/~raymond.chan/ops435/labs/LabCheckScripts/' + lab_name) != ChecksumLocal(filename='./' + lab_name):
+        if ChecksumLatest(url='https://ict.senecacollege.ca/~eric.brauer/ops445/labs/LabCheckScripts/' + lab_name) != ChecksumLocal(filename='./' + lab_name):
             print()
             print(' There is a update available for ' + lab_name + ' please consider updating:')
-            print(' cd ~/ops435/' + lab_num + '/')
+            print(' cd ~/ops445/' + lab_num + '/')
             print(' pwd  #   <-- i.e. confirm that you are in the correct directory')
             print(' rm ' + lab_name)
-            print(' ls ' + lab_name + ' || wget https://ict.senecacollege.ca/~raymond.chan/ops435/labs/LabCheckScripts/' + lab_name)
+            print(' ls ' + lab_name + ' || wget https://ict.senecacollege.ca/~eric.brauer/ops445/labs/LabCheckScripts/' + lab_name)
             print()
             return
         print('Running latest version...')
