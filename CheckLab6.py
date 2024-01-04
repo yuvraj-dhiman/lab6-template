@@ -52,21 +52,6 @@ class lab6a(unittest.TestCase):
         error_output = 'your program does not have a shebang line(HINT: what should the first line contain)'
         self.assertEqual(first_line.strip(), '#!/usr/bin/env python3', msg=error_output)
     
-    @unittest.skip( "skipping user id check")
-    def test_a1_autor_id(self):
-        """[Lab 6] - [Investigate 1] - [Part 2] - Correct Script ID - match system ID: ./lab6a.py"""
-        lab_file = open('./lab6a.py')
-        all_lines = lab_file.readlines()
-        lab_file.close()
-        author_id = 'not set'
-        error_output = "Author ID not set in the script"
-        for each_line in all_lines:
-            if 'Author ID:' in each_line:
-                author_id = each_line.strip().split(':')[1].replace(' ','')
-                error_output = "Author ID does not match user name running the CheckLab6.py script."
-        user_id = os.getlogin()
-        self.assertEqual(author_id, user_id, msg=error_output)
-       
     def test_a_instantiate_class_0(self):
         """[Lab 6] - [Investigation 1] - [Part 2] - Creating Classes - instantiating object with 0 arguments fails"""
         with self.assertRaises(Exception) as context:
