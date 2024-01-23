@@ -37,7 +37,7 @@ class lab6a(unittest.TestCase):
     def test_a(self):
         """[Lab 6] - [Investigation 1] - [Part 2] - Creating a Class - Test for errors running: ./lab6a.py"""
         # Run students program
-        p = subprocess.Popen(['/usr/bin/python3', './lab6a.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen([sys.executable, './lab6a.py'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
         stdout, err = p.communicate()
         # Fail test if process returns a no zero exit status
         return_code = p.wait()
@@ -235,13 +235,14 @@ def CheckForUpdates():
         print('Skipping updates...')
         return
 
+
 def displayReportHeader():
-    report_heading = 'OPS435 Lab Report - System Information for running '+sys.argv[0]
+    report_heading = 'OPS445 Lab Report - System Information for running '+sys.argv[0]
     print(report_heading)
     print(len(report_heading) * '=')
-    print('    User login name:', os.getlogin())
+    import getpass
+    print('    User login name:', getpass.getuser())
     print('    Linux system name:', socket.gethostname())
-    print('    Linux system version:', os.popen('cat /etc/redhat-release').read().strip())
     print('    Python executable:',sys.executable)
     print('    Python version: ',sys.version_info.major,sys.version_info.minor,sys.version_info.micro,sep='')
     print('    OS Platform:',sys.platform)
